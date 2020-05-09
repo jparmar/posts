@@ -80,6 +80,7 @@ GEM
     diff-lcs (1.3)
     erubi (1.9.0)
     execjs (2.7.0)
+    ffi (1.12.2)
     ffi (1.12.2-x86-mingw32)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -87,7 +88,7 @@ GEM
       concurrent-ruby (~> 1.0)
     jbuilder (2.10.0)
       activesupport (>= 5.0.0)
-    loofah (2.4.0)
+    loofah (2.5.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     mail (2.7.1)
@@ -95,16 +96,19 @@ GEM
     method_source (1.0.0)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
-    minitest (5.10.3)
+    minitest (5.14.0)
+    mysql2 (0.4.10)
     mysql2 (0.4.10-x86-mingw32)
     nio4r (2.3.0)
-    nokogiri (1.9.1-x86-mingw32)
+    nokogiri (1.10.9)
+      mini_portile2 (~> 2.4.0)
+    nokogiri (1.10.9-x86-mingw32)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     public_suffix (3.1.1)
     puma (3.12.4)
-    rack (2.1.2)
-    rack-test (0.7.0)
+    rack (2.2.2)
+    rack-test (1.1.0)
       rack (>= 1.0, < 3)
     rails (5.1.4)
       actioncable (= 5.1.4)
@@ -173,9 +177,9 @@ GEM
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       redis (~> 3.2, >= 3.2.1)
-    simple_form (3.5.0)
-      actionpack (> 4, < 5.2)
-      activemodel (> 4, < 5.2)
+    simple_form (5.0.0)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -209,6 +213,7 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
@@ -226,7 +231,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   selenium-webdriver
   sidekiq (~> 4.1.2)
-  simple_form (~> 3.5)
+  simple_form (~> 5.0)
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
