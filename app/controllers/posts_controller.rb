@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @post.state = "draft"
   end
 
   # GET /posts/1/edit
@@ -59,6 +60,11 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def activate
+    post = Post.find(params[:id])
+    post.state = "published"
   end
 
   private

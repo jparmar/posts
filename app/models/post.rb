@@ -11,4 +11,7 @@ class Post < ApplicationRecord
   scope :published, -> { where(state: 'published') }
   scope :archived, -> { where(state: 'archived') }
 
+  def activable?
+    self.state == "draft"
+  end
 end

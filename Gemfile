@@ -32,6 +32,13 @@ gem 'jbuilder', '~> 2.5'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+# Make errors prettier
+gem 'better_errors', '~> 2.4'
+# Bulma CSS
+gem 'bulma-rails', '~> 0.6.1'
+# Simple forms
+gem 'simple_form', '~> 3.5'
+
 gem 'devise'
 gem 'sidekiq', '~> 4.1.2'
 
@@ -41,6 +48,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails'
 end
 
 group :development do

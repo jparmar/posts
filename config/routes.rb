@@ -7,6 +7,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  match ':controller(/:action(/:id(.:format)))', :via => [:get, :post]
+
   resources :comments do
     resources :comments
   end

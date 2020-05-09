@@ -1,27 +1,63 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<h1 class="subtitle is-2">Posts</h1>
+<%= link_to 'New Post', new_post_path %>
+<div class="section">
+  <div class="container">
     <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.body %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p class="title is-4"><%= link_to post.title, post  %></p>
+            </div>
+          </div>
+          <div class="content">
+            <%= post.body %>
+          </div>
+          <div class="comment-count">
+            <span class="tag is-rounded"><%= post.comments.count %> comments</span>
+          </div>
+          <div>
+            <div class="level-right">
+              <p class="level-item">
+                <%= link_to "Edit", edit_post_path(post), class:"button" %>
+              </p>
+              <p class="level-item">
+                <%= link_to "Delete", post_path(post), method: :destroy, data: { confirm: "Are you sure?" }, class:"button is-danger" %>
+              </p>
+              <%
+                if post.activable? %>
+              <p class="level-item">
+                <%= link_to "Activate", {controller: :posts, action: :activate, id: post.id} %>
+              </p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
+
+<!--<table>-->
+<!--  <thead>-->
+<!--    <tr>-->
+<!--      <th colspan="3"></th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+
+<!--  <tbody>-->
+    <%# @posts.each do |post| %>
+<!--      <tr>-->
+<!--        <td><%#= post.title %></td>-->
+<!--        <td><%#= post.body %></td>-->
+<!--        <td><%#= link_to 'Show', post %></td>-->
+<!--        <td><%#= link_to 'Edit', edit_post_path(post) %></td>-->
+<!--        <td><%#= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+<!--      </tr>-->
+    <%# end %>
+<!--  </tbody>-->
+<!--</table>-->
 
 <br>
-
-<%= link_to 'New Post', new_post_path %>
